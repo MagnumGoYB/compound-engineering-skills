@@ -2,7 +2,7 @@
 
 [中文版](README.zh-CN.md)
 
-Skills for AI coding agents based on the [Compound Engineering](https://every.to/guides/compound-engineering) methodology by Every.
+Skills for AI coding agents based on the [Compound Engineering](https://every.to/guides/compound-engineering) philosophy by Every.
 
 > Every unit of engineering work should make future work easier, not harder.
 

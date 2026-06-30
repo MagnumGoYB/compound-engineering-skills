@@ -2,7 +2,7 @@
 
 [English](README.md)
 
-基于 Every 的[复利工程](https://every.to/guides/compound-engineering)方法论，为 AI 编程 agent 设计的技能集。
+基于 Every 的[复利工程](https://every.to/guides/compound-engineering)哲学，为 AI 编程 agent 设计的技能集。
 
 > 每一份工程工作，都应该让后续的工作更容易，而不是更难。
 
