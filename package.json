@@ -13,5 +13,8 @@
     "claude",
     "coding-agent"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
 }
