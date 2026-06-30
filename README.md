@@ -70,3 +70,7 @@ Most thinking happens **before** and **after** code is written.
 ## License
 
 MIT
+
+---
+
+[中文版 (Chinese)](README.zh-CN.md)
