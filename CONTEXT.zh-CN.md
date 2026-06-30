@@ -1,5 +1,7 @@
 # 上下文
 
+[English](CONTEXT.md)
+
 ## 领域术语
 
 | 术语 | 定义 |
@@ -13,7 +15,3 @@
 - 技能以 Markdown + YAML frontmatter 存储
 - 每个技能独立可用、自包含
 - 主技能负责编排，子技能处理具体阶段
-
----
-
-[English version](CONTEXT.md)
