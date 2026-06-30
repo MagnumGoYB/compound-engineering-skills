@@ -1,96 +1,100 @@
 ---
 name: compound-review
-description: "复利工程审查阶段：多维度并发审查代码。Use when reviewing code changes, PRs, or completed implementations."
+description: "Compound Engineering review phase: multi-dimensional parallel review producing prioritized improvement lists. Use when reviewing code changes or PRs."
 ---
 
 # Compound Review
 
-> 多个专项视角同时审查，把问题按优先级归类。
+> Review from multiple specialized perspectives in parallel, classify findings by priority.
 
-## 目标
+## Goal
 
-从安全、性能、架构、质量等多维度全面审查代码，产出可执行的改进清单。
+Comprehensively review code across security, performance, architecture, and quality dimensions, producing an actionable improvement checklist.
 
-## 审查维度
+## Review Dimensions
 
-并发执行以下审查（根据项目类型选择适用维度）：
+Run these reviews concurrently (pick dimensions relevant to the project):
 
-### 风险类
-| 维度 | 关注点 |
-|------|--------|
-| **安全** | OWASP Top 10、注入攻击、认证越权、敏感数据暴露 |
-| **数据完整性** | 事务边界、引用完整性、迁移安全、回滚能力 |
+### Risk
+| Dimension | Focus |
+|-----------|-------|
+| **Security** | OWASP Top 10, injection, auth bypass, sensitive data exposure |
+| **Data Integrity** | Transaction boundaries, referential integrity, safe migrations, rollback capability |
 
-### 性能类
-| 维度 | 关注点 |
-|------|--------|
-| **性能** | N+1 查询、缺索引、可缓存点、算法瓶颈 |
-| **运维** | 部署风险、监控覆盖、回滚预案 |
+### Performance
+| Dimension | Focus |
+|-----------|-------|
+| **Performance** | N+1 queries, missing indexes, caching opportunities, algorithmic bottlenecks |
+| **Operations** | Deployment risk, monitoring coverage, rollback plan |
 
-### 架构类
-| 维度 | 关注点 |
-|------|--------|
-| **架构** | 系统设计、组件边界、依赖方向 |
-| **设计模式** | 模式识别、反模式、代码坏味道 |
+### Architecture
+| Dimension | Focus |
+|-----------|-------|
+| **Architecture** | System design, component boundaries, dependency direction |
+| **Design Patterns** | Pattern recognition, anti-patterns, code smells |
 
-### 质量类
-| 维度 | 关注点 |
-|------|--------|
-| **代码质量** | YAGNI、可读性、命名、复杂度 |
-| **框架规范** | 项目约定、最佳实践、惯用写法 |
+### Quality
+| Dimension | Focus |
+|-----------|-------|
+| **Code Quality** | YAGNI, readability, naming, complexity |
+| **Framework Conventions** | Project conventions, best practices, idiomatic usage |
 
-## 优先级定义
+## Priority Levels
 
-| 级别 | 含义 | 处理方式 |
-|------|------|----------|
-| **P1** | 必须修 | 阻塞合并，立即修复 |
-| **P2** | 应该修 | 本轮修复，不阻塞合并 |
-| **P3** | 可以修 | 记录待办，后续处理 |
+| Level | Meaning | Action |
+|-------|---------|--------|
+| **P1** | Must fix | Block merge, fix immediately |
+| **P2** | Should fix | Fix this cycle, does not block merge |
+| **P3** | Nice to fix | Record as backlog, handle later |
 
-## 输出格式
+## Output Format
 
 ```markdown
-# 代码审查报告
+# Code Review Report
 
-## 概要
-- 审查文件：[文件列表]
-- 审查维度：[维度列表]
-- 发现问题：P1: X 个, P2: Y 个, P3: Z 个
+## Summary
+- Files reviewed: [file list]
+- Dimensions: [dimension list]
+- Findings: P1: X, P2: Y, P3: Z
 
-## P1 · 必须修
-- [ ] **[维度]** 问题描述
-  - 文件：`path/to/file:line`
-  - 建议：修复方案
+## P1 · Must Fix
+- [ ] **[Dimension]** Issue description
+  - File: `path/to/file:line`
+  - Suggestion: fix approach
 
-## P2 · 应该修
-- [ ] **[维度]** 问题描述
-  - 文件：`path/to/file:line`
-  - 建议：修复方案
+## P2 · Should Fix
+- [ ] **[Dimension]** Issue description
+  - File: `path/to/file:line`
+  - Suggestion: fix approach
 
-## P3 · 可以修
-- [ ] **[维度]** 问题描述
-  - 文件：`path/to/file:line`
-  - 建议：修复方案
+## P3 · Nice to Fix
+- [ ] **[Dimension]** Issue description
+  - File: `path/to/file:line`
+  - Suggestion: fix approach
 
-## 亮点
-[做得好的地方，值得保持]
+## Highlights
+[Things done well, worth keeping]
 ```
 
-## 审查流程
+## Review Process
 
-1. **并行审查** — 各维度独立审查，互不干扰
-2. **结果合并** — 去重、统一格式
-3. **优先级排序** — P1 > P2 > P3
-4. **逐项修复** — 先修 P1，再修 P2
-5. **验证修复** — 确保修复不引入新问题
+Use parallel orchestration: dispatch multiple sub-agents, each reviewing from a single dimension. They run independently without cross-contaminating context. The main agent aggregates results.
+
+1. **Dispatch parallel agents** — create one sub-agent per review dimension, each reads the diff and reviews from its single lens
+2. **Collect results** — wait for all sub-agents to finish, gather findings per dimension
+3. **Deduplicate and merge** — remove duplicate findings, unify into P1/P2/P3 format
+4. **Prioritize** — P1 > P2 > P3
+5. **Write to todos/** — save findings to `todos/YYYY-MM-DD-review.md` with priority and status
+6. **Fix in order** — fix P1s first, then P2s
+7. **Verify fixes** — ensure fixes don't introduce new issues
 
 ## Checklist
 
-- [ ] 安全维度已审查
-- [ ] 性能维度已审查
-- [ ] 架构维度已审查
-- [ ] 代码质量已审查
-- [ ] 问题按优先级分类
-- [ ] P1 问题已修复
-- [ ] P2 问题已修复或计划修复
-- [ ] P3 问题已记录待办
+- [ ] Security dimension reviewed
+- [ ] Performance dimension reviewed
+- [ ] Architecture dimension reviewed
+- [ ] Code quality reviewed
+- [ ] Findings classified by priority
+- [ ] P1 issues fixed
+- [ ] P2 issues fixed or planned
+- [ ] P3 issues recorded in `todos/`

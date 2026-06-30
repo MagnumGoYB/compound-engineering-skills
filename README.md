@@ -2,7 +2,7 @@
 
 Skills for AI coding agents based on the [Compound Engineering](https://every.to/guides/compound-engineering) methodology by Every.
 
-> 每一份工程工作，都应该让后续的工作更容易，而不是更难。
+> Every unit of engineering work should make future work easier, not harder.
 
 ## Quickstart
 
@@ -40,6 +40,7 @@ Plan → Work → Review → Compound → Repeat
 |-------|------|-------------|
 | [compound-engineering](skills/engineering/compound-engineering/SKILL.md) | User-invoked | Main skill: orchestrates the 4-step loop |
 | [compound-plan](skills/engineering/compound-engineering/compound-plan.md) | Model-invoked | Planning phase: requirements → research → design |
+| [compound-work](skills/engineering/compound-engineering/compound-work.md) | Model-invoked | Implementation phase: execute plan in isolated workspace |
 | [compound-review](skills/engineering/compound-engineering/compound-review.md) | Model-invoked | Review phase: multi-dimensional parallel review |
 | [compound-compound](skills/engineering/compound-engineering/compound-compound.md) | Model-invoked | Compound phase: capture solutions as knowledge |
 

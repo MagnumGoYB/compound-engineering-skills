@@ -10,6 +10,7 @@ skills/
     compound-engineering/
       SKILL.md           # Main skill
       compound-plan.md   # Planning phase
+      compound-work.md   # Implementation phase
       compound-review.md # Review phase
       compound-compound.md # Compound phase
   productivity/          # General workflow skills (future)
@@ -33,7 +34,7 @@ description: "Short description of when to use this skill."
 - Skills should be small, focused, and composable
 - Use checkboxes (`- [ ]`) for actionable items
 - Include concrete examples and templates
-- Write in both English and Chinese where appropriate
+- Write in English for skill content
 
 ## Validation
 

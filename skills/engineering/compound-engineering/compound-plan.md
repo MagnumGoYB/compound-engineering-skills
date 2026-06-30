@@ -1,83 +1,83 @@
 ---
 name: compound-plan
-description: "复利工程计划阶段：把想法变成蓝图。Use when starting a new feature or task, before writing any code."
+description: "Compound Engineering planning phase: requirements → research → solution design. Think before coding. Use when starting a new feature, before writing any code."
 ---
 
 # Compound Plan
 
-> 把想法变成蓝图。80% 的思考发生在代码被写出来之前。
+> 80% of thinking happens before code is written. Plan figures out how to solve — not write code yet.
 
-## 目标
+## Goal
 
-产出清晰、可执行的实现方案，让 Work 阶段可以零思考执行。
+Produce a clear, executable implementation spec so the Work phase can execute without re-deciding.
 
-## 流程
+## Process
 
-### 1. 理解需求
+### 1. Understand Requirements
 
-- [ ] 弄清问题的本质（不是用户说要什么，而是用户需要什么）
-- [ ] 明确约束条件（时间、技术、资源）
-- [ ] 定义成功标准
+- [ ] Identify the real problem (not what the user asked for, but what they need)
+- [ ] Clarify constraints (time, tech, resources)
+- [ ] Define success criteria
 
-### 2. 研究代码库
+### 2. Research the Codebase
 
-- [ ] 查找同类功能的现有实现
-- [ ] 理解现有架构和设计模式
-- [ ] 识别可复用的组件和工具
+- [ ] Find existing implementations of similar features
+- [ ] Understand current architecture and design patterns
+- [ ] Identify reusable components and utilities
 
-### 3. 查阅文档
+### 3. Consult Documentation
 
-- [ ] 框架官方文档的最佳实践
-- [ ] API 文档和类型定义
-- [ ] 相关的 ADR（架构决策记录）
+- [ ] Framework best practices
+- [ ] API docs and type definitions
+- [ ] Relevant ADRs (Architecture Decision Records)
 
-### 4. 设计方案
+### 4. Design Solutions
 
-- [ ] 列出 2-3 个可行方案
-- [ ] 分析各方案的优劣
-- [ ] 选择推荐方案并说明理由
+- [ ] List 2-3 viable approaches
+- [ ] Analyze tradeoffs for each
+- [ ] Recommend one with rationale
 
-### 5. 校验方案
+### 5. Validate the Design
 
-- [ ] 方案是否解决了核心问题？
-- [ ] 是否与现有架构一致？
-- [ ] 是否有遗漏的边界情况？
-- [ ] 是否可测试？
+- [ ] Does it solve the core problem?
+- [ ] Is it consistent with existing architecture?
+- [ ] Are edge cases covered?
+- [ ] Is it testable?
 
-## 输出格式
+## Output Format
 
 ```markdown
-# [功能名称] 实现方案
+# [Feature Name] Implementation Plan
 
-## 背景
-[问题描述和动机]
+## Background
+[Problem description and motivation]
 
-## 约束
-[技术限制、时间限制、依赖关系]
+## Constraints
+[Technical limits, time constraints, dependencies]
 
-## 方案对比
-| 方案 | 优点 | 缺点 | 推荐 |
-|------|------|------|------|
-| A    | ...  | ...  | ✓    |
-| B    | ...  | ...  |      |
+## Design Comparison
+| Approach | Pros | Cons | Recommended |
+|----------|------|------|-------------|
+| A        | ...  | ...  | ✓           |
+| B        | ...  | ...  |             |
 
-## 推荐方案：[方案名]
-[详细设计，包括文件结构、接口定义、数据流]
+## Recommended Approach: [Name]
+[Detailed design: file structure, interfaces, data flow]
 
-## 边界情况
-[需要处理的异常和边界]
+## Edge Cases
+[Exceptions and edge cases to handle]
 
-## 测试策略
-[如何验证方案正确性]
+## Testing Strategy
+[How to verify correctness]
 ```
 
 ## Checklist
 
-- [ ] 需求理解无歧义
-- [ ] 约束条件已明确
-- [ ] 研究了现有实现
-- [ ] 查阅了相关文档
-- [ ] 提出多个方案并对比
-- [ ] 选定方案并详细设计
-- [ ] 校验方案可行性
-- [ ] 方案文档已保存到 docs/plans/
+- [ ] Requirements are unambiguous
+- [ ] Constraints are clear
+- [ ] Existing implementations researched
+- [ ] Relevant docs consulted
+- [ ] Multiple approaches compared
+- [ ] Recommended approach fully designed
+- [ ] Design validated for feasibility
+- [ ] Plan saved to `docs/plans/`
