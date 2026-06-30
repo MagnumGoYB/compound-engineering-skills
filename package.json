@@ -1,0 +1,17 @@
+{
+  "name": "compound-engineering-skills",
+  "version": "1.0.0",
+  "description": "Skills for AI coding agents based on Compound Engineering methodology",
+  "private": true,
+  "scripts": {
+    "validate": "node scripts/validate.js"
+  },
+  "keywords": [
+    "ai",
+    "skills",
+    "compound-engineering",
+    "claude",
+    "coding-agent"
+  ],
+  "license": "MIT"
+}
