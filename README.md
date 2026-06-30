@@ -26,7 +26,7 @@ Plan → Work → Review → Compound → Repeat
 |------|---------|-----------------|
 | **Plan** | Turn ideas into blueprints: understand requirements, research codebase, design solutions | 40% |
 | **Work** | Execute in isolated environment (git worktree), run tests/lint/typecheck after each change | 10% |
-| **Review** | Multi-dimensional parallel review by specialized agents, triage by P1/P2/P3 | 40% |
+| **Review** | Multi-dimensional parallel review by specialized agents, triage by P0/P1/P2/P3 with confidence and action class | 40% |
 | **Compound** | Extract reusable knowledge back into the system | 10% |
 
 ### Key Insight
@@ -60,7 +60,7 @@ Most thinking happens **before** and **after** code is written.
 | File | Purpose |
 |------|---------|
 | `CLAUDE.md` | Agent startup playbook: preferences, conventions, learned lessons |
-| `docs/solutions/` | Searchable solution documents with YAML frontmatter |
+| `docs/solutions/` | Searchable solution documents (bug & knowledge tracks), organized by category with YAML frontmatter |
 | `docs/plans/` | Planning outputs |
 | `todos/` | Review findings with priority and status |
 

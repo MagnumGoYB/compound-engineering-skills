@@ -26,7 +26,7 @@ Plan → Work → Review → Compound → 重复
 |------|------|----------|
 | **Plan** | 把想法变成蓝图：弄清需求、研究代码库、设计方案 | 40% |
 | **Work** | 在隔离环境（git worktree）执行，每改一处跑测试/lint/类型检查 | 10% |
-| **Review** | 多个专项 agent 并行审查，按 P1/P2/P3 归类 | 40% |
+| **Review** | 多个专项 agent 并行审查，按 P0/P1/P2/P3 归类，附置信度与动作类别 | 40% |
 | **Compound** | 把解法抽成可复用知识写回系统 | 10% |
 
 ### 核心洞察
@@ -60,7 +60,7 @@ Plan → Work → Review → Compound → 重复
 | 文件 | 作用 |
 |------|------|
 | `CLAUDE.md` | Agent 启动必读手册：偏好、约定、踩过的坑 |
-| `docs/solutions/` | 带 YAML 标签的可搜索解法文档 |
+| `docs/solutions/` | 可搜索的解法文档（bug 与 knowledge 双轨道），按分类组织，带 YAML frontmatter |
 | `docs/plans/` | 计划产出 |
 | `todos/` | Review 发现的问题，带优先级和状态 |
 
